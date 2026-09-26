@@ -20,6 +20,48 @@ const missions=[
 {title:'Data Defender',focus:'Keamanan Data & Kerahasiaan',icon:'🔐',slides:[['KLASIFIKASI','Data pribadi dan dokumen internal tidak boleh dibagikan sembarangan.'],['AKSES','Gunakan password kuat dan kunci layar saat meninggalkan meja.'],['INSIDEN','Jangan meneruskan file mencurigakan; laporkan kepada admin.']],docs:[['Data_Pribadi_Karyawan.xlsx','rahasia'],['Kebijakan_Akses_Internal.pdf','kebijakan'],['Laporan_Insiden_Data.docx','insiden']],folders:[['rahasia','DATA RAHASIA'],['kebijakan','KEBIJAKAN'],['insiden','INSIDEN']]},
 {title:'Prodistik Pro',focus:'Ujian Komprehensif',icon:'🏆',slides:[['INTEGRASI','Arsip, surat, telepon, tamu, keuangan, dan digital saling mendukung.'],['PRIORITAS','Dahulukan akurasi, kerahasiaan, komunikasi, dan pencatatan.'],['FINAL','Cek ulang pekerjaan dan minta bantuan bila menemukan risiko.']],docs:[['Arsip_Misi_Final.zip','arsip'],['Checklist_Administrasi_Final.xlsx','checklist'],['Sertifikat_Prodistik_Pro.pdf','sertifikat']],folders:[['arsip','ARSIP FINAL'],['checklist','CHECKLIST'],['sertifikat','SERTIFIKAT']]}
 ];
+const quizBank=[
+[
+ {q:'Manakah urutan penyusunan sistem kearsipan berbasis abjad yang benar untuk dokumen nama “Siti Aminah”?',o:['Aminah, Siti','Siti, Aminah','S. Aminah','Aminah S.'],a:0},
+ {q:'Sebuah surat vendor masuk pada 12 Maret 2024. Langkah arsip yang paling tepat adalah...',o:['Menyimpan tanpa label','Mengelompokkan berdasarkan jenis surat dan memberi tanggal','Membuangnya setelah dibaca','Menggabungkannya dengan surat keluar'],a:1},
+ {q:'Mengapa kode dan label folder harus konsisten?',o:['Agar dekorasi lemari rapi','Agar dokumen cepat ditemukan dan dikembalikan','Agar semua dokumen terlihat sama','Agar arsip tidak perlu dicatat'],a:1}
+],
+[
+ {q:'Saat menerima telepon dari klien luar yang ingin berbicara dengan pimpinan yang sedang rapat, ucapan paling sopan adalah...',o:['Bapak sedang sibuk rapat, telepon nanti saja ya.','Selamat pagi, Bapak sedang memimpin rapat. Ada pesan yang ingin disampaikan?','Tunggu sebentar, saya panggilkan.','Maaf tidak bisa diganggu.'],a:1},
+ {q:'Informasi apa yang paling penting dicatat saat menerima pesan telepon?',o:['Warna pakaian penelepon','Nama, instansi, nomor kontak, dan isi pesan','Merek telepon yang digunakan','Lama dering telepon'],a:1},
+ {q:'Penutup percakapan telepon kantor yang tepat adalah...',o:['Langsung memutus sambungan','Mengulang tindak lanjut, mengucapkan terima kasih, lalu berpamitan','Meminta penelepon menelepon orang lain','Berkata “sudah ya” tanpa konfirmasi'],a:1}
+],
+[
+ {q:'Bagian surat resmi yang berisi nama instansi, logo, dan alamat lengkap lembaga disebut...',o:['Kepala Surat (Kop Surat)','Perihal Surat','Lampiran','Tembusan'],a:0},
+ {q:'Apa fungsi nomor surat pada surat dinas?',o:['Mempercantik tampilan surat','Memudahkan pencatatan dan pelacakan surat','Menggantikan tanda tangan','Menentukan jumlah halaman'],a:1},
+ {q:'Kalimat salam pembuka yang paling sesuai untuk surat resmi adalah...',o:['Hai teman-teman,','Dengan hormat,','Halo semuanya!','Apa kabar?'],a:1}
+],
+[
+ {q:'Informasi yang wajib diperiksa pada nota pembelian ATK adalah...',o:['Warna kertas nota','Tanggal, pihak penjual, rincian barang, dan nominal','Nama pembuat desain','Jumlah kursi di toko'],a:1},
+ {q:'Sebelum mencatat pembayaran vendor, petugas sebaiknya...',o:['Membandingkan nominal nota dengan bukti pembayaran','Menghapus tanggal transaksi','Mengubah angka agar genap','Menyimpan nota tanpa membaca'],a:0},
+ {q:'Siapa yang boleh mengakses laporan kas internal?',o:['Semua pengunjung kantor','Petugas yang berwenang sesuai prosedur','Siapa pun yang meminta','Kurir dan tamu'],a:1}
+],
+[
+ {q:'Sikap pertama yang tepat saat tamu datang ke front office adalah...',o:['Tetap melihat layar tanpa menyapa','Berdiri, tersenyum, menyapa, dan menanyakan keperluan','Meminta tamu menunggu tanpa penjelasan','Langsung memberikan kunci ruangan'],a:1},
+ {q:'Data yang semestinya dicatat dalam buku tamu adalah...',o:['Merek sepatu tamu','Nama, instansi, tujuan, waktu kunjungan, dan kontak bila diperlukan','Nomor rekening tamu','Pendapat pribadi petugas'],a:1},
+ {q:'Jika orang yang dituju sedang tidak berada di tempat, petugas sebaiknya...',o:['Membiarkan tamu mencari sendiri','Menghubungi pihak terkait dan menawarkan ruang tunggu','Memberi akses ke ruang kerja','Mengatakan “tidak tahu”'],a:1}
+],
+[
+ {q:'Subjek email yang paling profesional untuk mengirim rancangan rapat adalah...',o:['PENTING!!!','Draft Agenda Rapat Divisi Operasional - 15 April 2024','Baca ini','File'],a:1},
+ {q:'Sebelum menekan tombol Kirim pada email, hal yang wajib diperiksa adalah...',o:['Penerima, isi, nama lampiran, dan alamat tujuan','Warna desktop','Jumlah tab browser','Ukuran ikon email'],a:0},
+ {q:'Cara penamaan file digital yang paling mudah dicari adalah...',o:['baru_final_fix_banget.docx','2024-04-15_Proposal-KlienA_v1.pdf','dokumen1.pdf','file kantor terbaru.pdf'],a:1}
+],
+[
+ {q:'Dokumen berisi data pribadi karyawan seharusnya...',o:['Dikirim ke grup umum','Disimpan terbatas dan hanya dibagikan kepada pihak berwenang','Dicetak lalu ditinggal di printer','Diunggah ke media sosial'],a:1},
+ {q:'Kebiasaan yang membantu melindungi akun kantor adalah...',o:['Menggunakan password yang sama untuk semua akun','Mengunci layar saat meninggalkan meja dan memakai password kuat','Menulis password di monitor','Memberikan password kepada teman'],a:1},
+ {q:'Saat menerima email dengan lampiran mencurigakan, tindakan yang tepat adalah...',o:['Meneruskan ke seluruh kantor','Membuka lampiran untuk mencoba','Tidak membukanya dan melaporkannya kepada admin','Menghapus bukti tanpa memberi tahu siapa pun'],a:2}
+],
+[
+ {q:'Prioritas utama dalam pekerjaan administrasi kantor adalah...',o:['Kecepatan tanpa pemeriksaan','Akurasi, kerahasiaan, komunikasi, dan pencatatan','Menghindari semua dokumentasi','Menyimpan semua file di desktop'],a:1},
+ {q:'Dokumen resmi, data keuangan, dan email kantor sebaiknya dikelola dengan...',o:['Prosedur yang sesuai jenis dokumen dan kewenangan akses','Satu folder tanpa nama','Akses terbuka untuk semua orang','Nama file acak'],a:0},
+ {q:'Jika menemukan risiko kesalahan atau kebocoran data, langkah profesional adalah...',o:['Menyembunyikannya','Meneruskan file ke pihak luar','Mencatat kejadian dan segera melapor kepada penanggung jawab','Menghapus semua arsip'],a:2}
+]
+];
 const state={screen:'home',day:1,slide:0,quiz:0,answer:null,selected:null,score:0,matched:[],feedback:'',unlocked:loadUnlocks()};
 function loadUnlocks(){try{const x=JSON.parse(localStorage.getItem('officeQuestMissionState'));if(Array.isArray(x)&&x.length===8)return x.map(Boolean)}catch(e){}return [true,false,false,false,false,false,false,false]}
 function saveUnlocks(){try{localStorage.setItem('officeQuestMissionState',JSON.stringify(state.unlocked))}catch(e){}}
@@ -34,7 +76,7 @@ function game(){const m=missions[state.day-1];return `<main class="max-w-3xl mx-
 function pickDoc(type){if(!state.matched.includes(type)){state.selected=type;state.feedback='';render()}}
 function playDing(){try{const ctx=new (window.AudioContext||window.webkitAudioContext)();const osc=ctx.createOscillator();const gain=ctx.createGain();osc.frequency.value=880;gain.gain.value=.06;osc.connect(gain);gain.connect(ctx.destination);osc.start();osc.stop(ctx.currentTime+.12)}catch(e){}}
 function sortDoc(type,button){if(!state.selected){state.feedback='Pilih dokumen terlebih dahulu.';render();return}if(type===state.selected){state.matched.push(state.selected);state.score=state.matched.length;state.selected=null;state.feedback='Benar! Dokumen masuk ke folder yang tepat.';playDing();render()}else{state.feedback='Folder Tidak Sesuai';button.classList.remove('shake');void button.offsetWidth;button.classList.add('shake');setTimeout(()=>button.classList.remove('shake'),400);render()}}
-function quiz(){const m=missions[state.day-1],s=m.slides[state.quiz];const choices=['Terapkan sesuai prosedur','Abaikan agar cepat','Bagikan tanpa izin'];return `<main class="max-w-2xl mx-auto p-5 md:p-10"><p class="text-amber-300 text-sm font-bold">DAY ${state.day} · KUIS ${m.focus}</p><h1 class="text-4xl font-black mt-2">${m.title}</h1><section class="glass rounded-3xl p-6 mt-6"><h2 class="text-xl font-bold">Dalam topik ${s[0]}, tindakan yang tepat adalah?</h2><div class="grid gap-3 mt-6">${choices.map((c,i)=>`<button onclick="answerQuiz(${i})" class="glass rounded-xl p-4 text-left ${state.answer===i?'selected':''}">${c}</button>`).join('')}</div><button ${state.answer===null?'disabled':''} onclick="nextQuiz()" class="w-full mt-6 bg-amber-500 disabled:opacity-40 text-slate-950 font-black py-3 rounded-xl">${state.quiz===2?'SELESAI & BUKA DAY BERIKUTNYA':'LANJUT →'}</button></section></main>`}
+function quiz(){const m=missions[state.day-1],q=quizBank[state.day-1][state.quiz];return `<main class="max-w-2xl mx-auto p-5 md:p-10"><p class="text-amber-300 text-sm font-bold">DAY ${state.day} · KUIS ${m.focus}</p><h1 class="text-4xl font-black mt-2">${m.title}</h1><section class="glass rounded-3xl p-6 mt-6"><p class="text-xs text-slate-500 font-bold">SOAL ${state.quiz+1} DARI ${quizBank[state.day-1].length}</p><h2 class="text-xl font-bold leading-relaxed mt-3">${q.q}</h2><div class="grid gap-3 mt-6">${q.o.map((c,i)=>`<button type="button" onclick="answerQuiz(${i})" class="glass rounded-xl p-4 text-left ${state.answer===i?'selected':''}"><span class="text-amber-300 font-black mr-2">${String.fromCharCode(65+i)}.</span>${c}</button>`).join('')}</div><button type="button" ${state.answer===null?'disabled':''} onclick="nextQuiz()" class="w-full mt-6 bg-amber-500 disabled:opacity-40 text-slate-950 font-black py-3 rounded-xl">${state.quiz===quizBank[state.day-1].length-1?'SELESAI & BUKA DAY BERIKUTNYA':'LANJUT →'}</button></section></main>`}
 function answerQuiz(i){state.answer=i;render()}function nextQuiz(){if(state.answer===0){state.quiz++;state.answer=null;if(state.quiz>2){state.unlocked[Math.min(7,state.day)]=true;saveUnlocks();state.screen='map';toast('Misi selesai. Level berikutnya terbuka!')}render()}else{toast('Jawaban belum tepat. Terapkan prosedur yang dipelajari.')}}
 function unlockAll(){state.unlocked=Array(8).fill(true);saveUnlocks();toast('Semua level terbuka untuk Dev Mode.');render()}function toast(t){const e=document.getElementById('toast');e.textContent=t;e.classList.remove('hidden');setTimeout(()=>e.classList.add('hidden'),2200)}
 render();
