@@ -2,11 +2,9 @@
 
 import { useState, type FormEvent } from 'react'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
 import { authClient } from '@/lib/auth-client'
 
 export function AuthForm({ mode, nextPath }: { mode: 'sign-in' | 'sign-up'; nextPath: string }) {
-  const router = useRouter()
   const [displayName, setDisplayName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -20,18 +18,23 @@ export function AuthForm({ mode, nextPath }: { mode: 'sign-in' | 'sign-up'; next
     setError(null)
     setLoading(true)
 
-    const result = isSignUp
-      ? await authClient.signUp.email({ email, password, name: displayName.trim() })
-      : await authClient.signIn.email({ email, password })
+    try {
+      const result = isSignUp
+        ? await authClient.signUp.email({ email, password, name: displayName.trim(), callbackURL: nextPath })
+        : await authClient.signIn.email({ email, password, callbackURL: nextPath })
 
-    setLoading(false)
-    if (result.error) {
+      if (result.error) {
+        setError('Tidak dapat memproses akun. Periksa kembali data dan coba lagi.')
+        return
+      }
+
+      // Use a fresh document request so the session cookie is sent before the game loads its Neon profile.
+      window.location.replace(nextPath)
+    } catch {
       setError('Tidak dapat memproses akun. Periksa kembali data dan coba lagi.')
-      return
+    } finally {
+      setLoading(false)
     }
-
-    router.push(nextPath)
-    router.refresh()
   }
 
   return (
